@@ -7,7 +7,7 @@
 // This is used to make the front-end behaviour a little more
 // realistic even while we use a simplistic "in-memory" db.
 
-function someMilliseconds() {
+function someMilliseconds() { //gives random milisec numbers---simulate(shabih sazi)
   return Math.floor(Math.random() * 400) + 100;
 }
 

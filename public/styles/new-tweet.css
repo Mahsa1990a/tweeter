@@ -39,3 +39,7 @@ footer button {
   font-family: 'Bungee', sans-serif;
   color: #545149;
 }
+/* Make counter red if over 140 character inputted */
+.counterErr {
+  color: red;
+}

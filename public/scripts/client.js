@@ -16,30 +16,9 @@ $(document).ready(function() {
   //     },
   //   "created_at": 1461116232227
   // }
-  const data = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png"
-        ,
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd" },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
-    }
-  ]
+
+  //we don't neet data content anymore, it weill take data from server
+  const data = [];
   
   //responsible for taking an arr of tweet obj and append(prepend) each one to the target
   const renderTweets = function(tweets) {
@@ -53,6 +32,7 @@ $(document).ready(function() {
     const name = tweet.user.name;
     const handle = tweet.user.handle;
     const text = tweet.content.text;
+    const avatar = tweet.user.avatars;
     const time = new Date(tweet.created_at).toLocaleString();
   
     let $tweet = `
@@ -60,7 +40,7 @@ $(document).ready(function() {
       <article class="tweet">
         <header>
           <div>
-            <i class="fas fa-user"></i>
+            <span class="avatar"><img src="${avatar}">
             <span class="name">${name}</span>
           </div>
           <span class="alias"><h5>${handle}</h5></span>
@@ -100,10 +80,26 @@ $(document).ready(function() {
       method: "POST",
       url: "/tweets",
       data: {text: tweetContent}
+      //data: $(this).serialize()
     })
-    .then(function(response){
+    .then(response => {
       console.log("response", response);
+      $("#tweet-text").val(''); //to put cursor back to begining
+      loadTweets(); //loading tweets from Data
     })
     .catch(err => console.log("ERORR: ", err))
   });
+
+  //Is responsible for fetching tweets from the http://localhost:8080/tweets page
+  const loadTweets = function() {
+  //   //will use jQuery to make request to /tweets
+    $.ajax({
+      method: "GET",
+      url: "/tweets"
+    })
+    .then(tweets => {
+      renderTweets(tweets);
+    })
+  }
+  loadTweets();
 });

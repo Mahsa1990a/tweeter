@@ -1,0 +1,48 @@
+/* main article class */
+.tweet {
+  border: 0.1em solid black;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 1em;
+  margin-bottom: 0.8em;
+}
+/* tweet text class */
+.tweet-text {
+  margin-bottom: 1em;
+}
+/* tweeter name class */
+.name {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1em;
+  margin-left: 0.2em;
+}
+.time{
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1.3em;
+}
+article header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.line{
+  border-bottom: .1em solid black; 
+}
+article footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: small;
+  margin-top: 0.5em;
+}
+/* hovering tweet box */
+.tweet:hover {
+  box-shadow: 10px 10px grey;
+}
+.alias{
+  visibility: hidden;
+}
+.tweet:hover .alias {
+  visibility: visible;
+}

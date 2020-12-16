@@ -66,8 +66,9 @@ $(document).ready(function() {
           <span class="alias"><h5>${handle}</h5></span>
         </header>
         <span class="tweet-text">${text}</span>
+        <div><hr class="line"></div>
         <footer>
-          <span>${time}</span>
+          <span class="time">${time}</span>
           <div>
             <button type="retweet"><i class="fas fa-flag"></i></button>
             <button type="flag"><i class="fas fa-retweet"></i></button>

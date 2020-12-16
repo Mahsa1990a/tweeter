@@ -55,7 +55,7 @@
     <main class="container">
       <!-- Creating form(tweet section) -->
       <section class="new-tweet">
-        <form method="POST" action="/tweets/">
+        <form id="submit-tweet" method="POST" action="/tweets">
           <label for="tweet-text"> <b>What are you humming about?</b></label>
           <textarea name="text" id="tweet-text" placeholder="Write ..."></textarea>
           <footer>
@@ -75,12 +75,13 @@
               <span class="alias"><h5>@Sirlsaac</h5></span>
             </header>
             <span class="tweet-text">If I have seen further it is by standing on the shoulders of giants.</span>
+            <div><hr class="line"></div>
             <footer>
-                <span>10 days ago</span>
+                <span class="time">10 days ago</span>
                 <div>
-                  <i class="fas fa-flag"></i>
-                  <i class="fas fa-retweet"></i>
-                  <i class="fas fa-heart"></i>
+                  <button type="retweet"><i class="fas fa-flag"></i></button>
+                  <button type="flag"><i class="fas fa-retweet"></i></button>
+                  <button type="like"><i class="fas fa-heart"></i></button>
                 </div>
             </footer>
           </article>

@@ -8,6 +8,7 @@ nav {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  /*fixed nav bar*/
   position: fixed;
   top: 0;
 }

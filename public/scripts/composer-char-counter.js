@@ -15,10 +15,11 @@ $(document).ready(function() {
 const onKeyUp = function() {
     //console.log("This: ", this); //this -> <textarea ...></textarea>
   const count = $(this).val().length;
-  console.log("count", count); //it increases number of characters that I type(start from 0 so we need 140-count)
+  //console.log("count", count); //it increases number of characters that I type(start from 0 so we need 140-count)
   const counter = 140 - count;
   //target is output that has 140 counter:
   $("output").text(counter); //it shows decreasing 140
+  //or $(this).siblings().children(".counter").text(counter);
 
   if (counter < 0) {
     $("output").addClass("counterErr");

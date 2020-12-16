@@ -19,7 +19,7 @@ body {
   background-color: #f4f1ec;
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
-  /*add padding top to fix clipped profile*/
+  /*add padding top to fix clipped fixed nav*/
   padding-top: 120px;
 }
 

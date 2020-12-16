@@ -85,4 +85,25 @@ $(document).ready(function() {
   //$('#tweets-container').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
   
   renderTweets(data);
+
+  //creat AJAX POST request
+  $("#submit-tweet").on("submit", function(event){ //target form
+    
+    const $tweetBox = $(this).children("#tweet-text");
+    const tweetContent = $tweetBox.val();
+    //Since we want to handle the form submission ourselves,
+    //and send the POST request asynchronously,
+    //we want to prevent the default form submission behaviour.
+    event.preventDefault();
+    
+    $.ajax({
+      method: "POST",
+      url: "/tweets",
+      data: {text: tweetContent}
+    })
+    .then(function(response){
+      console.log("response", response);
+    })
+    .catch(err => console.log("ERORR: ", err))
+  });
 });

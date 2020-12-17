@@ -21,6 +21,7 @@ nav span.title {
   font-size: 1.5em;
   float: left;
 }
+
 /* Write a new tweet */
 #write-tweet {
   font-family: 'Source Sans Pro', sans-serif;
@@ -31,10 +32,29 @@ nav span.title {
   border: none;
   outline: none;
   color:#FFFFFF;
-  margin: 1em
 }
+
 /* Arrow icon */
 #bounce {
   margin: 3px auto;
-  color: red
+  color: red;
+}
+
+
+/* Responsive Design */ /* max 1023px or less */
+@media only screen and (max-width: 1023px) { 
+  nav {
+    background-color: #00d99c;
+    background-image: url("https://www.transparenttextures.com/patterns/skulls.png");
+  }
+}
+/* max 480px or less */
+@media only screen and (max-width: 480px) {
+  
+  #write-tweet {
+    font-size: medium;
+  }
+  nav span.title {
+    font-size: larger;
+  }
 }

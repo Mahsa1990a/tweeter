@@ -55,14 +55,27 @@ $(document).ready(function() {
   //const $tweet = createTweetElement(tweetData);
   //$('#tweets-container').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
 
-  
+  const alertMessage = function (message) {
+    $('.alert').text(message);
+    /*animate the bar*/
+    $('.alert').slideDown(() => {
+      setTimeout(() => {
+        $('.alert').slideUp(() => {
+          $(this).remove()
+        });
+      }, 3000);
+    });
+  };
+  //creat AJAX POST request
   const submitNewTweet = function($form){
     const $tweetBox = $form.children("#tweet-text");
     const tweetContent = $tweetBox.val().trim();
 
-    if(!tweetContent || tweetContent === "" || tweetContent.length > 140) {
-      alert("⚠︎ Missing Text! ⚠︎");
+    if(!tweetContent || tweetContent === "") {
+      alertMessage("⚠︎ Missing Text! ⚠︎");
       console.log("⚠︎ Missing Text! ⚠︎");
+    } else if (tweetContent.length > 140) {
+      alertMessage("⚠︎ TOO long. Plz rspct our arbitary limit of 140 chars.#kthxbye. ⚠︎");
     } else {
       $.ajax({
         method: "POST",
@@ -73,17 +86,20 @@ $(document).ready(function() {
       .then(response => {
         console.log("response", response);
         $("#tweet-text").val(''); //to put cursor back to begining
+
+        $(".counter").text('140');
         loadTweets(); //loading tweets from Data
         
       })
       .catch(err => console.log("ERORR: ", err))
     }
   }
-  //creat AJAX POST request
+  
   $("form").on("submit", function(event){ //target form
     
     event.preventDefault();//prevent the default form submission behaviour
     console.log("Checking validity");
+    
     submitNewTweet($(this));
   });
 

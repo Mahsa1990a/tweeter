@@ -21,7 +21,7 @@ const onKeyUp = function() {
   $("output").text(counter); //it shows decreasing 140
   //or $(this).siblings().children(".counter").text(counter);
 
-  if (counter < 0) {
+  if (counter < 1) {
     $("output").addClass("counterErr");
   } else {
     $("output").removeClass("counterErr");

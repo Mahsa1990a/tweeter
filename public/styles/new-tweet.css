@@ -6,10 +6,13 @@ form {
   margin-bottom: 1em;
   width: 100%;/*centered*/
 }
+
+/* What are you humming about? */
 label {
   margin-top: 2em;
   margin-bottom: 0.5em;
 }
+
 /* Text input field */
 textarea#tweet-text {
   display: flex;
@@ -43,6 +46,7 @@ footer button {
   color: red;
 }
 
+/* Handling Error msg display on screen */
 .alert {
   margin:15px 50px 10px 50px;
   font-size:1em;

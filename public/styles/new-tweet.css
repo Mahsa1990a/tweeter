@@ -7,7 +7,8 @@ form {
   width: 100%;/*centered*/
 }
 label {
-  margin-top: .5em;
+  margin-top: 2em;
+  margin-bottom: 0.5em;
 }
 /* Text input field */
 textarea#tweet-text {
@@ -42,4 +43,14 @@ footer button {
 /* Make counter red if over 140 character inputted */
 .counterErr {
   color: red;
+}
+
+.alert {
+  margin:15px 50px 10px 50px;
+  font-size:1em;
+  font-family: 'Source Sans Pro', sans-serif;
+  vertical-align:middle;
+  color: #D8000C;
+  background-color: #FFD2D2;
+  text-align: center;
 }

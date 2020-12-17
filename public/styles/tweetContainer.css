@@ -1,6 +1,7 @@
 /* main article class */
 .tweet {
-  border: 0.1em solid black;
+  border: 0.1em solid grey;
+  border-radius: 5%;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -27,7 +28,7 @@ article header {
   justify-content: space-between;
 }
 .line{
-  border-bottom: .1em solid black; 
+  border-bottom: .1em solid grey; 
 }
 article footer {
   display: flex;

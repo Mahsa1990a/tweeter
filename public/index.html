@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Disabling Viewport Zooming -->
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
 
@@ -60,7 +62,7 @@
         <div class="alert"> </div>
         <form id="submit-tweet" method="POST" action="/tweets">
           <label for="tweet-text"> <b>What are you humming about?</b></label>
-          <textarea name="text" id="tweet-text" placeholder="Write ..."></textarea>
+          <textarea name="text" id="tweet-text" placeholder="Write it down..."></textarea>
           <footer>
             <button type="submit">Tweet</button> 
             <output name="counter" class="counter" for="tweet-text">140</output>

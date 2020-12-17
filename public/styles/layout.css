@@ -31,4 +31,16 @@ body {
   background-color: #f4f1ec;
   margin: auto;
 }
+
+/* Responsive Design *//*1024px or more*/
+@media only screen and (min-width: 1024px) {
+  body {
+    display: flex;
+  }
+  .container {
+    width: 50%;
+    margin-right: 4em;
+    margin-left: 4em;
+  }
+}
  

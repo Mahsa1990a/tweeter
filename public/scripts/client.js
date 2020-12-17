@@ -5,6 +5,12 @@
  */
 $(document).ready(function() {
   
+  //To avoid XSS(Cross-Site Scripting)
+  const escape = function (str) {
+    let div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  }
   //responsible for taking an arr of tweet obj and append(prepend) each one to the target
   const renderTweets = function(tweets) {
   
@@ -30,7 +36,7 @@ $(document).ready(function() {
           </div>
           <span class="alias"><h5>${handle}</h5></span>
         </header>
-        <span class="tweet-text">${text}</span>
+        <span class="tweet-text">${escape(text)}</span>
         <div><hr class="line"></div>
         <footer>
           <span class="time">${time}</span>
@@ -54,7 +60,7 @@ $(document).ready(function() {
     const $tweetBox = $form.children("#tweet-text");
     const tweetContent = $tweetBox.val().trim();
 
-    if(!tweetContent || tweetContent === ""){
+    if(!tweetContent || tweetContent === "" || tweetContent.length > 140) {
       alert("⚠︎ Missing Text! ⚠︎");
       console.log("⚠︎ Missing Text! ⚠︎");
     } else {
@@ -68,6 +74,7 @@ $(document).ready(function() {
         console.log("response", response);
         $("#tweet-text").val(''); //to put cursor back to begining
         loadTweets(); //loading tweets from Data
+        
       })
       .catch(err => console.log("ERORR: ", err))
     }

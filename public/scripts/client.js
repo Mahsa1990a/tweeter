@@ -40,7 +40,7 @@ $(document).ready(function() {
         <div><hr class="line"></div>
         <footer>
           <span class="time">${time}</span>
-          <div>
+          <div class="button">
             <button type="retweet"><i class="fas fa-flag"></i></button>
             <button type="flag"><i class="fas fa-retweet"></i></button>
             <button type="like"><i class="fas fa-heart"></i></button>

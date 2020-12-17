@@ -57,19 +57,17 @@
       <section class="new-tweet">
         <form id="submit-tweet" method="POST" action="/tweets">
           <label for="tweet-text"> <b>What are you humming about?</b></label>
-          <textarea name="text" id="tweet-text" placeholder="Write ..."></textarea>
+          <textarea name="text" id="tweet-text" placeholder="Write ..." minlength="1" maxlength="140"></textarea>
           <footer>
             <button type="submit">Tweet</button> 
             <output name="counter" class="counter" for="tweet-text">140</output>
           </footer>
         </form>
-
         <!-- Tweet container -->
         <section id="tweets-container">
           <!-- Tweets will be present here via client.js -->
         </section>
       </section>
     </main>
-
   </body>
 </html>

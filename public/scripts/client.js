@@ -4,21 +4,6 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 $(document).ready(function() {
-
-  // const tweetData =  {
-  //   "user": {
-  //     "name": "Newton",
-  //     "avatars": "https://i.imgur.com/73hZDYK.png",
-  //       "handle": "@SirIsaac"
-  //     },
-  //   "content": {
-  //       "text": "If I have seen further it is by standing on the shoulders of giants"
-  //     },
-  //   "created_at": 1461116232227
-  // }
-
-  //we don't neet data content anymore, it weill take data from server
-  const data = [];
   
   //responsible for taking an arr of tweet obj and append(prepend) each one to the target
   const renderTweets = function(tweets) {
@@ -63,31 +48,36 @@ $(document).ready(function() {
   //Test:
   //const $tweet = createTweetElement(tweetData);
   //$('#tweets-container').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
-  
-  renderTweets(data);
 
+  
+  const submitNewTweet = function($form){
+    const $tweetBox = $form.children("#tweet-text");
+    const tweetContent = $tweetBox.val().trim();
+
+    if(!tweetContent || tweetContent === ""){
+      alert("⚠︎ Missing Text! ⚠︎");
+      console.log("⚠︎ Missing Text! ⚠︎");
+    } else {
+      $.ajax({
+        method: "POST",
+        url: "/tweets",
+        //data: {text: tweetContent}
+        data: $form.serialize()
+      })
+      .then(response => {
+        console.log("response", response);
+        $("#tweet-text").val(''); //to put cursor back to begining
+        loadTweets(); //loading tweets from Data
+      })
+      .catch(err => console.log("ERORR: ", err))
+    }
+  }
   //creat AJAX POST request
-  $("#submit-tweet").on("submit", function(event){ //target form
+  $("form").on("submit", function(event){ //target form
     
-    const $tweetBox = $(this).children("#tweet-text");
-    const tweetContent = $tweetBox.val();
-    //Since we want to handle the form submission ourselves,
-    //and send the POST request asynchronously,
-    //we want to prevent the default form submission behaviour.
-    event.preventDefault();
-    
-    $.ajax({
-      method: "POST",
-      url: "/tweets",
-      data: {text: tweetContent}
-      //data: $(this).serialize()
-    })
-    .then(response => {
-      console.log("response", response);
-      $("#tweet-text").val(''); //to put cursor back to begining
-      loadTweets(); //loading tweets from Data
-    })
-    .catch(err => console.log("ERORR: ", err))
+    event.preventDefault();//prevent the default form submission behaviour
+    console.log("Checking validity");
+    submitNewTweet($(this));
   });
 
   //Is responsible for fetching tweets from the http://localhost:8080/tweets page

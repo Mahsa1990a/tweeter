@@ -11,7 +11,8 @@ $(document).ready(function() {
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   }
-  //responsible for taking an arr of tweet obj and append(prepend) each one to the target
+
+  //responsible for taking an arr of tweet obj and append(but in tweeter prepend) each one to the target
   const renderTweets = function(tweets) {
   
     for (let tweetOne of tweets) {
@@ -19,6 +20,7 @@ $(document).ready(function() {
     }
   };
   
+
   const createTweetElement = function(tweet) {
     const name = tweet.user.name;
     const handle = tweet.user.handle;
@@ -53,8 +55,10 @@ $(document).ready(function() {
   };
   //Test:
   //const $tweet = createTweetElement(tweetData);
-  //$('#tweets-container').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
+  // to add it to the page so we can make sure it's got all the right elements, classes, etc.
+  //$('#tweets-container').append($tweet); 
 
+  //For animated error msg
   const alertMessage = function (message) {
     $('.alert').text(message);
     /*animate the bar*/
@@ -66,17 +70,17 @@ $(document).ready(function() {
       }, 3000);
     });
   };
-  //creat AJAX POST request
+  
   const submitNewTweet = function($form){
     const $tweetBox = $form.children("#tweet-text");
     const tweetContent = $tweetBox.val().trim();
 
     if(!tweetContent || tweetContent === "") {
       alertMessage("⚠︎ Missing Text! ⚠︎");
-      console.log("⚠︎ Missing Text! ⚠︎");
     } else if (tweetContent.length > 140) {
       alertMessage("⚠︎ TOO long. Plz rspct our arbitary limit of 140 chars.#kthxbye. ⚠︎");
     } else {
+      //creat AJAX POST request
       $.ajax({
         method: "POST",
         url: "/tweets",
@@ -95,9 +99,11 @@ $(document).ready(function() {
     }
   }
   
-  $("form").on("submit", function(event){ //target form
+  //Submit event
+  $("form").on("submit", function(event){
     
-    event.preventDefault();//prevent the default form submission behaviour
+    //prevent the default form submission behaviour
+    event.preventDefault();
     console.log("Checking validity");
     
     submitNewTweet($(this));
@@ -105,7 +111,7 @@ $(document).ready(function() {
 
   //Is responsible for fetching tweets from the http://localhost:8080/tweets page
   const loadTweets = function() {
-  //   //will use jQuery to make request to /tweets
+  //will use jQuery to make request to /tweets
     $.ajax({
       method: "GET",
       url: "/tweets"

@@ -1,7 +1,7 @@
 /* main article class */
 .tweet {
   border: 0.1em solid grey;
-  border-radius: 5%;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -9,8 +9,11 @@
   margin-bottom: 0.8em;
 }
 /* tweet text class */
-.tweet-text {
-  margin-bottom: 1em;
+#tweet-text {
+  overflow-wrap: break-word;
+  border: none;
+  outline: none;
+  border-bottom: 3px solid gray;
 }
 /* tweeter name class */
 .name {
@@ -45,5 +48,13 @@ article footer {
   visibility: hidden;
 }
 .tweet:hover .alias {
+  visibility: visible;
+}
+/* hovering button flags */
+.button {
+  font-size: 15px;
+  visibility: hidden;
+}
+.tweet:hover .button {
   visibility: visible;
 }

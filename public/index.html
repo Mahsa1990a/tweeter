@@ -3,6 +3,7 @@
   <head>
     <!-- Disabling Viewport Zooming -->
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
 
@@ -38,10 +39,10 @@
     <!-- Top nav bar (fixed) -->
     <nav>
       <span class="title">tweeter</span>
-      <button id="write-tweet">
+      <div id="write-tweet">
         <span><b>Write</b> a new tweet</span>
         <i id="bounce" class="fas fa-angle-double-down animate__animated animate__bounce"></i>
-      </button>
+      </div>
     </nav>
 
     <!-- Header with avatar and name -->
@@ -68,6 +69,7 @@
             <output name="counter" class="counter" for="tweet-text">140</output>
           </footer>
         </form>
+
         <!-- Tweet container -->
         <section id="tweets-container">
           <!-- Tweets will be present here via client.js -->

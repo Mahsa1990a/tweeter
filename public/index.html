@@ -20,6 +20,8 @@
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
     <link rel="stylesheet" href="/styles/tweetContainer.css" type="text/css" />
+    <!-- Animate style CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -36,7 +38,7 @@
       <span class="title">tweeter</span>
       <button id="write-tweet">
         <span><b>Write</b> a new tweet</span>
-        <i id="bounce" class="fas fa-angle-double-down"></i>
+        <i id="bounce" class="fas fa-angle-double-down animate__animated animate__bounce"></i>
       </button>
     </nav>
 
@@ -55,9 +57,10 @@
     <main class="container">
       <!-- Creating form(tweet section) -->
       <section class="new-tweet">
+        <div class="alert"> </div>
         <form id="submit-tweet" method="POST" action="/tweets">
           <label for="tweet-text"> <b>What are you humming about?</b></label>
-          <textarea name="text" id="tweet-text" placeholder="Write ..." minlength="1" maxlength="140"></textarea>
+          <textarea name="text" id="tweet-text" placeholder="Write ..."></textarea>
           <footer>
             <button type="submit">Tweet</button> 
             <output name="counter" class="counter" for="tweet-text">140</output>

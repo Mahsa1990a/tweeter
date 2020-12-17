@@ -3,7 +3,8 @@ nav {
   height: 120px;
   width: 100%;
   padding: 1.5em;
-  background-color: #4056A1;
+  background-color: #00d99c;
+  background-image: url("https://www.transparenttextures.com/patterns/skulls.png");
   color: #FFFFFF;
   display: flex;
   flex-direction: row;

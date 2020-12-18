@@ -5,10 +5,10 @@ Tweeter is a simple, single-page Twitter clone.
 
 ## Final Product 
 
-!["login page"]()
-!["register page"]()
-!["shortURL"]()
-!["creat new URL"]()
+!["Home page"](https://github.com/Mahsa1990a/tweeter/blob/master/public/images/helloTweet.png?raw=true)
+!["small size"](https://github.com/Mahsa1990a/tweeter/blob/master/public/images/tabletSize.png?raw=true)
+!["tweeter"](https://github.com/Mahsa1990a/tweeter/blob/master/public/images/tweeter.png?raw=true)
+!["Error"](https://github.com/Mahsa1990a/tweeter/blob/master/public/images/errorHandling.png?raw=true)
 
 ## Getting Started
 

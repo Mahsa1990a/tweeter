@@ -67,7 +67,7 @@ $(document).ready(function() {
         $('.alert').slideUp(() => {
           $(this).remove()
         });
-      }, 3000);
+      }, 9000);
     });
   };
   
@@ -78,7 +78,7 @@ $(document).ready(function() {
     if(!tweetContent || tweetContent === "") {
       alertMessage("⚠︎ Missing Text! ⚠︎");
     } else if (tweetContent.length > 140) {
-      alertMessage("⚠︎ TOO long. Plz rspct our arbitary limit of 140 chars.#kthxbye. ⚠︎");
+      alertMessage("⚠︎ TOO long. Plz rspct our arbitary limit of 140 chars! ⚠︎");
     } else {
       //creat AJAX POST request
       $.ajax({
@@ -99,7 +99,7 @@ $(document).ready(function() {
     }
   }
   
-  //Submit event
+  // handling new tweet form submit
   $("form").on("submit", function(event){
     
     //prevent the default form submission behaviour
@@ -121,4 +121,9 @@ $(document).ready(function() {
     })
   }
   loadTweets();
+  // shows/hides new tweet section when clicked the arrow icon on navbar
+  $("nav i").on('click', function() {
+    $(".new-tweet").slideToggle();
+    $('textarea').focus();
+  });
 });

@@ -33,7 +33,12 @@ nav span.title {
   outline: none;
   color:#FFFFFF;
 }
-
+nav div button {
+  background: transparent;
+  border: none;
+  outline: none;
+  color:#FFFFFF;
+}
 /* Arrow icon */
 #bounce {
   margin: 3px auto;

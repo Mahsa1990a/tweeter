@@ -1,11 +1,12 @@
 /* main article class */
 .tweet {
-  border: 0.1em solid black;
+  border: 0.1em solid gray;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   padding: 1em;
   margin-bottom: 0.8em;
+  margin-top: 2em;
 }
 
 .avatar {
@@ -74,7 +75,7 @@ article footer {
 
 /* Responsive Design */ /* max 480px or less */
 @media only screen and (max-width: 480px) {
-  
+
   .name {
     font-size: large;
   }
@@ -84,5 +85,16 @@ article footer {
   .button {
     font-size: small;
     visibility: visible;
+  }
+}
+
+/* Responsive Design */ /* max 1023px or less */
+@media only screen and (max-width: 1023px) { 
+
+  .tweet {
+    margin-top: 0em;
+  }
+  #tweet-text {
+    margin-top: 0em;
   }
 }

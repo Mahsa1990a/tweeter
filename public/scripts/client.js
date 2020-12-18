@@ -90,8 +90,10 @@ $(document).ready(function() {
       .then(response => {
         console.log("response", response);
         $("#tweet-text").val(''); //to put cursor back to begining
-
+        
         $(".counter").text('140');
+        $('#tweets-container').empty(); //to not have over tweeting
+
         loadTweets(); //loading tweets from Data
         
       })
@@ -120,10 +122,13 @@ $(document).ready(function() {
       renderTweets(tweets);
     })
   }
-  loadTweets();
+ 
   // shows/hides new tweet section when clicked the arrow icon on navbar
   $("nav i").on('click', function() {
     $(".new-tweet").slideToggle();
     $('textarea').focus();
   });
+
+
+  loadTweets();
 });

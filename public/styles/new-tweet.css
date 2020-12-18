@@ -19,8 +19,8 @@ textarea#tweet-text {
   font-size: 20px;
   height: 40px;
   margin-bottom: .5em;
-  margin-top: .5em;
   width: 100%;
+  background-color: transparent;
 }
 
 /* Tweet button & 140 */
@@ -55,4 +55,15 @@ footer button {
   color: #D8000C;
   background-color: #FFD2D2;
   text-align: center;
+}
+
+/* Responsive Design */ /* max 1023px or less */
+@media only screen and (max-width: 1023px) { 
+
+  label {
+    margin-top: 0em;
+  }
+  textarea#tweet-text {
+    margin-top: 0em;
+  }
 }

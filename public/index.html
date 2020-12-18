@@ -26,7 +26,7 @@
     <!-- Animate style CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
-    <!-- External JS -->
+    <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!-- composer-char-counter JS -->
     <script type="text/javascript" src="scripts/composer-char-counter.js"></script>
@@ -40,7 +40,7 @@
     <nav>
       <span class="title">tweeter</span>
       <div id="write-tweet">
-        <span><b>Write</b> a new tweet</span>
+        <button type="submit"><span><b>Write</b> a new tweet</span></button>
         <i id="bounce" class="fas fa-angle-double-down animate__animated animate__bounce"></i>
       </div>
     </nav>
@@ -63,18 +63,20 @@
         <div class="alert"> </div>
         <form id="submit-tweet" method="POST" action="/tweets">
           <label for="tweet-text"> <b>What are you humming about?</b></label>
-          <textarea name="text" id="tweet-text" placeholder="Write it down..."></textarea>
+          <textarea name="text" id="tweet-text"></textarea>
           <footer>
             <button type="submit">Tweet</button> 
             <output name="counter" class="counter" for="tweet-text">140</output>
           </footer>
         </form>
-
+      </section>
         <!-- Tweet container -->
         <section id="tweets-container">
           <!-- Tweets will be present here via client.js -->
         </section>
-      </section>
+      
+      <!-- Scroll up button -->
+      <button class='scroll-up'><i class="fas fa-angle-double-up"></i></button>
     </main>
   </body>
 </html>

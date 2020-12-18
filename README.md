@@ -2,7 +2,13 @@
 
 Tweeter is a simple, single-page Twitter clone.
 
-This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express and MongoDB back-end skills.
+
+## Final Product 
+
+!["login page"]()
+!["register page"]()
+!["shortURL"]()
+!["creat new URL"]()
 
 ## Getting Started
 
@@ -15,3 +21,23 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+- body-parser
+- chance
+
+## Technology
+
+Mostly a front-end project, with focus on having a good-looking UI.
+
+This app uses HTML, CSS, JS, jQuery and AJAX on the front-end; and Node, Express and MongoDB on the back-end.
+
+## Responsive Design
+
+For desktops and laptops (over 1024px), your profile will appear on the left, and tweets on the right.
+
+For smaller devices like mobile, sections will be stacked on top of each other, profile being on top and tweets bottom.
+
+## Features
+
+- Tweet validation prevents you from sending empty tweets, or those with over 140 characters.
+- Tweeting field toggles on/off as you prefer.
+- Each tweet shows the user's name, handle, and when hovered over, social icons.

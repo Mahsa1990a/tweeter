@@ -16,11 +16,8 @@
 }
 
 /* tweet text class */
-#tweet-text {
+.tweet-text {
   overflow-wrap: break-word;
-  border: none;
-  outline: none;
-  border-bottom: 3px solid gray;
 }
 
 /* tweeter name class */
@@ -94,7 +91,5 @@ article footer {
   .tweet {
     margin-top: 0em;
   }
-  #tweet-text {
-    margin-top: 0em;
-  }
+
 }
